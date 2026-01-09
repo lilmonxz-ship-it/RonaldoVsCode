@@ -1,10 +1,34 @@
 #include <iostream>
 using namespace std;
 
+#include <iostream>
+using namespace std;
+
 template <typename T>
 void insertionSort(T d[],int N){
-
+	for (int i = 1; i < N; i++){
+		T K = d[i];
+		int M = i-1;
+			while(M >= 0 && d[M] < K){
+				d[M + 1]=d[M];
+				M = M-1;
+			}
+			d[M+1]=K;
+			
+cout << "Pass " << i << ":";
+        for (int x = 0; x < N; x++) {
+            cout << d[x] << (x == N - 1 ? "" : " ");
+        }
+        cout << endl;
+	}
 }
+
+void printArray(int d[] , int n){
+for(int i = 0; i < n; i++)
+	cout << d[i] << " ";
+cout << endl;
+}
+
 
 int main(){
 	int a[10] = {12,25,30,44,2,0,4,7,55,25};
